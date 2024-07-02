@@ -1,0 +1,18 @@
+.hour-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  border-bottom: solid;
+  border-bottom-width: 0.1rem;
+  border-bottom-color: rgba(186, 186, 186, 0.7);
+}
+
+hr {
+  border: 0.1rem dashed rgba(186, 186, 186, 0.7);
+  width: 100%;
+  /* background-image: linear-gradient(to right, black 50%, white 0%);
+  background-position: bottom;
+  background-size: 3px 3px;
+  background-repeat: repeat-x; */
+}

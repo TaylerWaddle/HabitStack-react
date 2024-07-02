@@ -1,0 +1,8 @@
+.timeline-container {
+  margin: 20px;
+  width: auto;
+  height: auto;
+  border-top: solid;
+  border-top-width: 0.1rem;
+  border-top-color: rgba(186, 186, 186, 0.7);
+}
