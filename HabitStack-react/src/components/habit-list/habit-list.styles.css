@@ -1,8 +1,5 @@
 .habit-list-container {
   margin: 20px 20px 0px 20px;
-}
-
-.habit-list-item {
   display: flex;
   flex-direction: column;
 }
