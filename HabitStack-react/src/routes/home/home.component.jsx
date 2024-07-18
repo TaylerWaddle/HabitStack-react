@@ -1,4 +1,4 @@
-import TimeLine from "../../components/timeline/timeline.component";
+// import TimeLine from "../../components/timeline/timeline.component";
 import "./home.styles.scss";
 import { closestCorners } from "@dnd-kit/core";
 import { DndContext } from "@dnd-kit/core";
@@ -34,7 +34,7 @@ const Home = () => {
   return (
     <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
       <StackList stacks={stacks}></StackList>
-      <TimeLine></TimeLine>
+      {/* <TimeLine></TimeLine> */}
     </DndContext>
   );
 };
