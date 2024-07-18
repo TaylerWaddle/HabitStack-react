@@ -1,4 +1,4 @@
-import "./hour-timeslot.styles.css";
+import "./hour-timeslot.styles.scss";
 
 const HourTimeslot = () => {
   return (

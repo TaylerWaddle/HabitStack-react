@@ -1,5 +1,5 @@
 import HourTimeslot from "../hour-timeslot/hour-timeslot.component";
-import "./timeline.styles.css";
+import "./timeline.styles.scss";
 
 const hours = [];
 for (let i = 0; i < 24; i++) {

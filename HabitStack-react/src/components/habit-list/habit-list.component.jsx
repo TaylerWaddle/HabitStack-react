@@ -1,4 +1,4 @@
-import "./habit-list.styles.css";
+import "./habit-list.styles.scss";
 
 const habits = [
   { id: 1, name: "Morning Routine" },
