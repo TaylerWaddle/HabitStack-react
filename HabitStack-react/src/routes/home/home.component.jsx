@@ -1,31 +1,41 @@
 import TimeLine from "../../components/timeline/timeline.component";
-import { Fragment } from "react";
-
-const habits = [
-  { id: 1, name: "Morning Routine" },
-  { id: 2, name: "Animals" },
-  { id: 3, name: "Workout" },
-  { id: 4, name: "After Work" },
-  { id: 5, name: "Wind Down" },
-];
-
-const dragStartHandler = (event) => {
-  // Add the target element's id to the data transfer object
-  event.dataTransfer.setData("text/plain", event.target.id);
-};
+import "./home.styles.scss";
+import { closestCorners } from "@dnd-kit/core";
+import { DndContext } from "@dnd-kit/core";
+import { useState } from "react";
+import StackList from "../../components/stack-list/stack-list.component.jsx";
+import { arrayMove } from "@dnd-kit/sortable";
 
 const Home = () => {
+  const [stacks, setStacks] = useState([
+    { id: 1, title: "Morning Routine" },
+    { id: 2, title: "Animals" },
+    { id: 3, title: "Workout" },
+    { id: 4, title: "After Work" },
+    { id: 5, title: "Wind Down" },
+  ]);
+
+  const getStackPos = (id) => stacks.findIndex((stack) => stack.id === id);
+
+  const handleDragEnd = (event) => {
+    const { active, over } = event;
+
+    if (active.id === over.id) {
+      return;
+    }
+    setStacks((stacks) => {
+      const originalPos = getStackPos(active.id);
+      const newPos = getStackPos(over.id);
+
+      return arrayMove(stacks, originalPos, newPos);
+    });
+  };
+
   return (
-    <Fragment>
-      <div className="habit-list-container">
-        {habits.map((habit) => (
-          <span draggable="true" key={habit.id} onDragStart={dragStartHandler}>
-            {habit.name}
-          </span>
-        ))}
-      </div>
+    <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
+      <StackList stacks={stacks}></StackList>
       <TimeLine></TimeLine>
-    </Fragment>
+    </DndContext>
   );
 };
 
