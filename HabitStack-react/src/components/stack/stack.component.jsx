@@ -17,9 +17,10 @@ const Stack = ({ id, title }) => {
       {...attributes}
       {...listeners}
       style={style}
-      className="stack"
+      className="stack-container"
     >
-      {title}
+      <input type="checkbox" className="checkbox" />
+      <span className="stack-title">{title}</span>
     </div>
   );
 };

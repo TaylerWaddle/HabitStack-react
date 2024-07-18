@@ -1,3 +1,15 @@
-.stack {
+.stack-container {
   touch-action: none;
+  display: flex;
+  justify-content: left;
+}
+
+.stack-title {
+  font-size: 2rem;
+  padding-left: 16px;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
 }
