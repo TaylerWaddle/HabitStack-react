@@ -3,10 +3,21 @@ body {
   box-sizing: border-box;
   background-color: #373737;
   color: whitesmoke;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Barlow Condensed";
+  letter-spacing: 0.75px;
 }
 
 a {
   text-decoration: none;
   color: black;
+}
+
+button {
+  font-family: "Barlow Condensed";
+  letter-spacing: 0.75px;
+}
+
+input {
+  font-family: "Barlow Condensed";
+  letter-spacing: 0.75px;
 }
