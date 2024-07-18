@@ -1,5 +1,6 @@
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
+import "./stack.styles.scss";
 
 const Stack = ({ id, title }) => {
   const { attributes, listeners, setNodeRef, transform, transition } =

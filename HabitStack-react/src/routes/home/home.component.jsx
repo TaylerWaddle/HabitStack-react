@@ -1,10 +1,17 @@
 // import TimeLine from "../../components/timeline/timeline.component";
 import "./home.styles.scss";
-import { closestCorners } from "@dnd-kit/core";
+import {
+  closestCorners,
+  KeyboardSensor,
+  PointerSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { DndContext } from "@dnd-kit/core";
 import { useState } from "react";
 import StackList from "../../components/stack-list/stack-list.component.jsx";
-import { arrayMove } from "@dnd-kit/sortable";
+import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 
 const Home = () => {
   const [stacks, setStacks] = useState([
@@ -31,8 +38,20 @@ const Home = () => {
     });
   };
 
+  const sensors = useSensors(
+    useSensor(PointerSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor, {
+      coordinateGetter: sortableKeyboardCoordinates,
+    })
+  );
+
   return (
-    <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCorners}>
+    <DndContext
+      sensors={sensors}
+      onDragEnd={handleDragEnd}
+      collisionDetection={closestCorners}
+    >
       <StackList stacks={stacks}></StackList>
       {/* <TimeLine></TimeLine> */}
     </DndContext>
