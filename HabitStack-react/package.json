@@ -14,6 +14,7 @@
     "@dnd-kit/sortable": "^8.0.0",
     "@dnd-kit/utilities": "^3.2.2",
     "chart.js": "^4.4.3",
+    "firebase": "^10.12.4",
     "immutability-helper": "^3.1.1",
     "react": "^18.3.1",
     "react-chartjs-2": "^5.2.0",
