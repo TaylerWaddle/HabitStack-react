@@ -4,7 +4,7 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import "./sign-in.styles.scss";
 
@@ -17,12 +17,15 @@ const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
+  const navigate = useNavigate();
+
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
+    navigate("/");
   };
 
   const handleSubmit = async (event) => {
@@ -30,6 +33,7 @@ const SignIn = () => {
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
       resetFormFields();
+      navigate("/");
     } catch (error) {
       if (error.code === "auth/invalid-credential") {
         alert("invalid credentials");
