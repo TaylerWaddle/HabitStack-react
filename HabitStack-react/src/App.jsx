@@ -6,8 +6,9 @@ import PillarsRoute from "./routes/pillars/pillars.component";
 import ProfileRoute from "./routes/profile/profile.component";
 import StacksRoute from "./routes/stacks/stacks.component";
 import AddRoute from "./routes/add/add.component";
-import Authentication from "./routes/authentication/authentication.component";
+import SignIn from "./routes/sign-in/sign-in.component";
 import PrivateRoutes from "./components/private-route/private-route.component";
+import SignUp from "./routes/sign-up/sign-up.component";
 
 const App = () => {
   return (
@@ -21,7 +22,8 @@ const App = () => {
           <Route element={<ProfileRoute />} path="profile" />
         </Route>
       </Route>
-      <Route path="/login" element={<Authentication />}></Route>
+      <Route path="/sign-in" element={<SignIn />}></Route>
+      <Route path="/sign-up" element={<SignUp />}></Route>
     </Routes>
   );
 };

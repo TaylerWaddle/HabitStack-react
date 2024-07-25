@@ -4,14 +4,16 @@ import {
   signInAuthUserWithEmailAndPassword,
 } from "../../utils/firebase";
 
-import "./authentication.styles.scss";
+import { Link } from "react-router-dom";
+
+import "./sign-in.styles.scss";
 
 const defaultFormFields = {
   email: "",
   password: "",
 };
 
-const Authentication = () => {
+const SignIn = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
@@ -82,10 +84,12 @@ const Authentication = () => {
       </form>
       <div className="sign-up-container">
         <span className="sign-up-prompt">Don&apos;t Have An Account?</span>
-        <button className="sign-up-button">Sign Up</button>
+        <Link to="/sign-up">
+          <button className="sign-up-button">Sign Up</button>
+        </Link>
       </div>
     </div>
   );
 };
 
-export default Authentication;
+export default SignIn;
