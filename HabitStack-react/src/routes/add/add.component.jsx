@@ -1,19 +1,19 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Logo from "../../assets/Habbit_Logo.png";
 
 import "./add.styles.scss";
 
 const AddRoute = () => {
-  const [input, setInput] = useState("");
-  const [results, setResults] = useState([]);
-  const [numberOfFormFields, setNumberOfFormFields] = useState(3);
+  // const [input, setInput] = useState("");
+  // const [results, setResults] = useState([]);
+  // const [numberOfFormFields, setNumberOfFormFields] = useState(3);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setResults(...results, input);
-    console.log(input);
-    console.log(results);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setResults(...results, input);
+  //   console.log(input);
+  //   console.log(results);
+  // };
 
   return (
     <div className="add-container">
